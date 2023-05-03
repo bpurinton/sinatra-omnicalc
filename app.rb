@@ -2,6 +2,9 @@
 # objects and methods
 require 'sinatra'
 
+require "open-uri"
+# require "json"
+
 get('/') do
   redirect('/square/new')
 end
@@ -39,4 +42,12 @@ get('/dice/:number/:sides') do
   @sides_per_dice = params.fetch("sides")
 
   erb(:dice_roll)
+end
+
+get('/forex') do
+  url = "https://api.exchangerate.host/symbols"
+  raw_data = URI.open(url).read
+  parsed_data = JSON.parse(raw_data)
+  @symbols = parsed_data.fetch("symbols").keys
+  erb(:currency_list)
 end
