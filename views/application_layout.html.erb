@@ -1,12 +1,43 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Sinatra</title>
+    <title>Sinatra Omnicalc</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
   </head>
 
   <body>
+    <table style="width: 100%" border="1">
+      <tr>
+        <td>
+          <strong>Calculators</strong>
+        </td>
+
+        <td>
+          <a href="/square/new">
+            Square with Form
+          </a>
+        </td>
+
+        <td>
+          <a href="/square_root/new">
+            Square Root with Form
+          </a>
+        </td>
+
+        <td>
+          <a href="/payment/new">
+            Payment with Form
+          </a>
+        </td>
+
+        <td>
+          <a href="/random/new">
+            Random with Form
+          </a>
+        </td>
+      </tr>
+    </table>
     <%= yield %>
   </body>
 </html>
