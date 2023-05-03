@@ -10,3 +10,8 @@ get('/square/new') do
   puts params
   erb(:square_form)
 end
+
+get('/square/results') do
+  puts params
+  erb(:square_results)
+end
