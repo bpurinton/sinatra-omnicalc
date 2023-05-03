@@ -17,6 +17,16 @@ get('/square/results') do
   
   @num = params.fetch("elephant").to_f
   @square_of_num = @num * @num
-  
+
   erb(:square_results)
+end
+
+get('/random/results') do
+  # puts params
+  # params = {"user_min"=>"1.5", "user_max"=>"4.5"}
+
+  @lower = params.fetch("user_min").to_f
+  @upper = params.fetch("user_max").to_f
+  
+  erb(:random_results)
 end
