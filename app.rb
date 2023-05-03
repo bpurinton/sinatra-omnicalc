@@ -12,6 +12,11 @@ get('/square/new') do
 end
 
 get('/square/results') do
-  puts params
+  # puts params
+  # params = {"elephant"=>"42"}
+  
+  @num = params.fetch("elephant").to_f
+  @square_of_num = @num * @num
+  
   erb(:square_results)
 end
