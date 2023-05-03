@@ -1,0 +1,15 @@
+<div>
+  <h1>
+    Convert <%= @currency_one%> to <%= @currency_two%>
+  </h1>
+</div>
+
+<div>
+  <p>
+    1 <%= @currency_one%> equals <%= 1 * @rate.to_f %> <%= @currency_two%>.
+  </p>
+</div>
+
+<div>
+  Go <a href=<%= "/forex/" + @currency_one %>>back</a>.
+</div>

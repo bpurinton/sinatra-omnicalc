@@ -51,3 +51,22 @@ get('/forex') do
   @symbols = parsed_data.fetch("symbols").keys
   erb(:currency_list)
 end
+
+get('/forex/:currency_one') do
+  @currency_one = params.fetch(:currency_one)
+  url = "https://api.exchangerate.host/symbols"
+  raw_data = URI.open(url).read
+  parsed_data = JSON.parse(raw_data)
+  @symbols = parsed_data.fetch("symbols").keys
+  erb(:currency_convert)
+end
+
+get('/forex/:currency_one/:currency_two') do
+  @currency_one = params.fetch(:currency_one)
+  @currency_two = params.fetch(:currency_two)
+  url = "https://api.exchangerate.host/convert?from=" + @currency_one + "&to=" + @currency_two
+  raw_data = URI.open(url).read
+  parsed_data = JSON.parse(raw_data)
+  @rate = parsed_data.fetch("result")
+  erb(:currency_conversion)
+end
