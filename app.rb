@@ -2,8 +2,8 @@
 # objects and methods
 require 'sinatra'
 
+# we need to require this gem to open a json URL
 require "open-uri"
-# require "json"
 
 get('/') do
   redirect('/square/new')
@@ -53,7 +53,7 @@ get('/forex') do
 end
 
 get('/forex/:currency_one') do
-  @currency_one = params.fetch(:currency_one)
+  @currency_one = params.fetch("currency_one")
   url = "https://api.exchangerate.host/symbols"
   raw_data = URI.open(url).read
   parsed_data = JSON.parse(raw_data)
@@ -62,8 +62,8 @@ get('/forex/:currency_one') do
 end
 
 get('/forex/:currency_one/:currency_two') do
-  @currency_one = params.fetch(:currency_one)
-  @currency_two = params.fetch(:currency_two)
+  @currency_one = params.fetch("currency_one")
+  @currency_two = params.fetch("currency_two")
   url = "https://api.exchangerate.host/convert?from=" + @currency_one + "&to=" + @currency_two
   raw_data = URI.open(url).read
   parsed_data = JSON.parse(raw_data)
