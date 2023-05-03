@@ -96,7 +96,7 @@ describe "/forex/[CURRENCY SYMBOL]/[CURRENCY SYMBOL]" do
   it "has the text '1 [CURRENCY SYMBOL] equals [CURRENCY SYMBOL]'", points: 1 do
 
     visit "/forex/CUP/SVC"
-    p page.text
+    
     expect(page).to have_text(/1 CUP equals 0.339787 SVC/i),
       "Expected page to have text that follows the pattern, '1 CUP equals 0.339787 SVC', but it didn't."
 
