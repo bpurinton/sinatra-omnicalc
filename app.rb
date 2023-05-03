@@ -7,5 +7,6 @@ get('/') do
 end
 
 get('/square/new') do
+  puts params
   erb(:square_form)
 end
