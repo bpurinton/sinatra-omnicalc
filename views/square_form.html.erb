@@ -4,3 +4,10 @@
 
   <button>Calculate square</button>
 </form>
+
+<p>
+  Previous square: 
+  <%= cookies[:number_to_square].to_f %> * 
+  <%= cookies[:number_to_square].to_f %> = 
+  <%= cookies[:number_squared].to_f %>
+</p>

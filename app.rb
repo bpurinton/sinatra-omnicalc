@@ -1,6 +1,7 @@
 # first we import sinatra so we have access to its 
 # objects and methods
 require 'sinatra'
+require 'sinatra/cookies'
 
 # we need to require this gem to open a json URL
 require "open-uri"
@@ -20,6 +21,9 @@ get('/square/results') do
   
   @num = params.fetch("elephant").to_f
   @square_of_num = @num * @num
+
+  cookies[:number_to_square] = @num
+  cookies[:number_squared] = @square_of_num
 
   erb(:square_results)
 end
