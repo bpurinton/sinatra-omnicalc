@@ -1,6 +1,8 @@
 # first we import sinatra so we have access to its 
 # objects and methods
 require 'sinatra'
+
+# we need to require this gem to get the cookies hash
 require 'sinatra/cookies'
 
 # we need to require this gem to open a json URL
