@@ -66,6 +66,23 @@ get('/tasks/:path_id') do
 end
 
 # delete task
+get('/update_task/:path_id') do
+  @task_id = params.fetch("path_id")
+
+  @name = params.fetch("query_task_name")
+  @description = params.fetch("query_task_description")
+
+  @list_of_tasks = Task.where({ :id => @task_id })
+  @task = @list_of_tasks.first
+
+  @task.name = @name
+  @task.description = @description
+  @task.save
+  
+  redirect('/tasks/' + @task_id)
+end
+
+# edit task
 get('/delete_task/:path_id') do
   @task_id = params.fetch("path_id")
 
