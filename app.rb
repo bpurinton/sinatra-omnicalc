@@ -28,10 +28,12 @@ class Task < ActiveRecord::Base
 end
 
 # Migrate the database
-ActiveRecord::Migration.create_table :tasks do |t|
-  t.string :name
-  t.text :description
-  t.timestamps
+if not File.file?('./development.db')
+  ActiveRecord::Migration.create_table :tasks do |t|
+    t.string :name
+    t.text :description
+    t.timestamps
+  end
 end
 
 # render a tasks index
