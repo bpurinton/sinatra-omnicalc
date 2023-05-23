@@ -17,6 +17,24 @@ ActiveRecord::Base.establish_connection(
   database: 'development.db'
 )
 
+# Define the Task model
+class Task < ActiveRecord::Base
+  # Attributes
+  # - id: integer (primary key)
+  # - name: string
+  # - description: text
+  # - created_at: datetime
+  # - updated_at: datetime
+end
+
+# Migrate the database
+ActiveRecord::Migration.create_table :tasks do |t|
+  t.string :name
+  t.text :description
+  t.timestamps
+end
+
+
 get('/') do
   redirect('/square/new')
 end
