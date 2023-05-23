@@ -1,0 +1,12 @@
+<h1>Task List</h1>
+
+<ul>
+  <% @tasks.each do |task| %>
+    <li>
+      <%= task.name %>
+      <a href="/tasks/<%= task.id %>">View</a>
+      <a href="/tasks/<%= task.id %>/edit">Edit</a>
+      <a href="/tasks/<%= task.id %>/delete">Delete</a>
+    </li>
+  <% end %>
+</ul>

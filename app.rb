@@ -34,6 +34,12 @@ ActiveRecord::Migration.create_table :tasks do |t|
   t.timestamps
 end
 
+# render a tasks index
+get('/tasks') do
+  @tasks = Task.all
+  erb(:tasks_index)
+end
+
 
 get('/') do
   redirect('/square/new')
