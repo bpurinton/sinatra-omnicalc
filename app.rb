@@ -65,6 +65,17 @@ get('/tasks/:path_id') do
   erb(:tasks_show)
 end
 
+# delete task
+get('/delete_task/:path_id') do
+  @task_id = params.fetch("path_id")
+
+  @list_of_tasks = Task.where({ :id => @task_id })
+  @task = @list_of_tasks.first
+  @task.destroy
+
+  redirect('/tasks')
+end
+
 get('/') do
   redirect('/square/new')
 end

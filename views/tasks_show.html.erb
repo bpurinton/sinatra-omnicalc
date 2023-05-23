@@ -1,17 +1,19 @@
 <h1>Task Details</h1>
 
+<p>
+  <a href="/delete_task/<%= @task.id %>">Delete Task</a>
+</p>
+
+<p>
+  <a href="/tasks">Back to Task List</a>
+</p>
+
 <h2><%= @task.name %></h2>
 
 <p><%= @task.description %></p>
 
-<div>
-  <a href="/tasks/<%= task.id %>/edit">Edit Task</a>
-</div>
+<h3>Edit task</h3>
 
 <div>
-  <a href="/tasks/<%= task.id %>/delete">Delete Task</a>
-</div>
-
-<div>
-  <a href="/tasks">Back to Task List</a>
+  <a href="/tasks/<%= @task.id %>/edit">Edit Task</a>
 </div>
