@@ -55,6 +55,16 @@ get('/tasks/create') do
   redirect('/tasks')
 end
 
+# show page for a task
+get('/tasks/:path_id') do
+  @task_id = params.fetch("path_id")
+
+  @list_of_tasks = Task.where({ :id => @task_id })
+  @task = @list_of_tasks.first
+
+  erb(:tasks_show)
+end
+
 get('/') do
   redirect('/square/new')
 end
