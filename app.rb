@@ -40,6 +40,18 @@ get('/tasks') do
   erb(:tasks_index)
 end
 
+# create a new task
+get('/tasks/create') do
+  @name = params.fetch("query_task_name")
+  @description = params.fetch("query_task_description")
+
+  @task = Task.new
+  @task.name = @name
+  @task.description = @description
+  @task.save
+  
+  redirect('/tasks')
+end
 
 get('/') do
   redirect('/square/new')
