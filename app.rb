@@ -11,12 +11,6 @@ require "open-uri"
 # require active record to make use of it
 require 'active_record'
 
-# Set up the database connection
-ActiveRecord::Base.establish_connection(
-  adapter: 'sqlite3',
-  database: 'development.db'
-)
-
 # Define the Task model
 class Task < ActiveRecord::Base
   # Attributes
@@ -25,15 +19,6 @@ class Task < ActiveRecord::Base
   # - description: text
   # - created_at: datetime
   # - updated_at: datetime
-end
-
-# Migrate the database
-if not File.file?('./development.db')
-  ActiveRecord::Migration.create_table :tasks do |t|
-    t.string :name
-    t.text :description
-    t.timestamps
-  end
 end
 
 # render a tasks index
