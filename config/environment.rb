@@ -27,4 +27,14 @@ configure :development do
     adapter: 'sqlite3',
     database: 'db/development.db'
   )
+
+  # appdev support patches
+  require "appdev_support"
+
+  AppdevSupport.config do |config|
+    # config.action_dispatch = true;
+    # config.active_record = true;
+    # config.pryrc = true;
+    end
+  AppdevSupport.init
 end

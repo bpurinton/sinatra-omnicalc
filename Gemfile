@@ -16,6 +16,7 @@ group :development do
   gem 'better_errors'
   gem 'binding_of_caller'
   gem "table_print"
+  gem "appdev_support", github: "firstdraft/appdev_support", branch: "appdev-210-update-pryrc"
 end
 
 group :development, :test do
