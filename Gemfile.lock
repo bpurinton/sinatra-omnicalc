@@ -1,9 +1,8 @@
 GIT
   remote: https://github.com/firstdraft/appdev_support.git
-  revision: c288ab064cee1bb073206692d2b3660759cd163b
-  branch: appdev-210-update-pryrc
+  revision: 9fb4784fc31736e1f0c916c349d887b121ed3941
   specs:
-    appdev_support (0.2.0)
+    appdev_support (0.2.1)
       tabulo
 
 GIT
