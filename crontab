@@ -1,1 +1,1 @@
-* * * * * echo "hello world"
+* * * * * bundle exec ruby sample_data.rb
