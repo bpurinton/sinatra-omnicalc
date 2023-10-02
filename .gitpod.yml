@@ -19,3 +19,4 @@ vscode:
     - mbessey.vscode-rufo
     - aliariff.vscode-erb-beautify
     - eamodio.gitlens
+    - setobiralo.erb-commenter
